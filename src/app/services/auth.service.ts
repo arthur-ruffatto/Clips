@@ -51,4 +51,8 @@ export class AuthService {
       userData.email, userData.password as string
     )
   }
+
+  public async logoutUser(){
+    await this.auth.signOut();
+  }
 }
