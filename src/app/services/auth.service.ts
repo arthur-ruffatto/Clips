@@ -37,8 +37,14 @@ export class AuthService {
       phoneNumber: userData.phoneNumber,
     })
 
-    userCredentials.user.updateProfile({
+    await userCredentials.user.updateProfile({
       displayName: userData.name
     })
+  }
+
+  public async loginUser(userData: IUser){
+    await this.auth.signInWithEmailAndPassword(
+      userData.email, userData.password as string
+    )
   }
 }
