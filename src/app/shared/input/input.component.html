@@ -28,4 +28,10 @@
     - Must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number <br>
     - Can contain special characters
   </p>
+  <p class="text-red-400" *ngIf="control.errors?.noMatch">
+    Passwords do not match.
+  </p>
+  <p class="text-red-400" *ngIf="control.errors?.EmailTaken">
+    Email already taken. Please try another.
+  </p>
 </ng-container>

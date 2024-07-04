@@ -37,7 +37,7 @@
   <button type="submit"
           class="block w-full bg-indigo-400 text-white py-1.5 px-3 rounded transition
                 disabled:opacity-50" [ngClass]="{ 'hover:bg-indigo-500': !registerForm.invalid }"
-          [disabled]="registerForm.invalid || inSubmission"
+          [disabled]="registerForm.invalid || registerForm.pending || inSubmission"
   >
     Submit
   </button>
