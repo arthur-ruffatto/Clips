@@ -37,7 +37,6 @@ export class LoginComponent {
       this.inSubmission = false;
       return
     }
-
     this.alertMsg = 'Logged in successfully.';
     this.color = 'green';
     return
