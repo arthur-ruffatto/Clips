@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalService } from "../services/modal.service";
 import { AuthService } from "../services/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-nav',
@@ -11,7 +12,8 @@ export class NavComponent {
 
   constructor(
     public modal: ModalService,
-    public auth: AuthService
+    public auth: AuthService,
+    private router: Router
   ) {
   }
 
@@ -24,5 +26,6 @@ export class NavComponent {
   async logout($event: Event) {
     $event.preventDefault();
     await this.auth.logoutUser()
+    await this.router.navigateByUrl('/');
   }
 }
